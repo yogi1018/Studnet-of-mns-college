@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corona Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+  <script src="https://kit.fontawesome.com/cebedaac72.js" crossorigin="anonymous"></script>
+ <style>
+   body{
+  background-color: rgb(7,111,236);
+  color: white;
+  text-align: center;
+  font-family: system-ui;
+}
+
+#webcam-container{
+   border-radius: 5px;
+}
+
+.myButton {
+  font-family: system-ui;
+  font-weight: bold;
+  color: #FFFFFF !important;
+  font-size: 14px;
+  padding: 11px 29px;
+  border-radius: 14px;
+  border: 0px solid #3866A3;
+  background: #63B8EE;
+}
+.myButton:hover {
+  color: white;
+  background: rgb(255,165,0);
+}
+
+
+ </style>
+
+</head>
+<body>
+  <div>
+    <div>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='143' height='26' viewBox='0 0 143 26'%3E %3Cdefs%3E %3Cpath id='a' d='M13.152 10.707L6.588.127 19.7.12z'/%3E %3Cfilter id='b' width='122.9%25' height='128.3%25' x='-11.4%25' y='-14.2%25' filterUnits='objectBoundingBox'%3E %3CfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3E %3CfeOffset dy='1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3E %3CfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3E %3CfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0595771416 0'/%3E %3C/filter%3E %3Cpath id='c' d='M13.152 10.707L6.588 21.286l13.114.008z'/%3E %3Cfilter id='d' width='122.9%25' height='128.3%25' x='-11.4%25' y='-14.2%25' filterUnits='objectBoundingBox'%3E %3CfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3E %3CfeOffset dy='1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3E %3CfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3E %3CfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0595771416 0'/%3E %3C/filter%3E %3Cpath id='e' d='M.031 10.709l6.557 10.583 6.557-10.583z'/%3E %3Cfilter id='f' width='122.9%25' height='128.3%25' x='-11.4%25' y='-14.2%25' filterUnits='objectBoundingBox'%3E %3CfeGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/%3E %3CfeOffset dy='1' in='shadowBlurInner1' result='shadowOffsetInner1'/%3E %3CfeComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/%3E %3CfeColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0595771416 0'/%3E %3C/filter%3E %3Cpath id='h' d='M.03 10.704h13.115L6.588.121z'/%3E %3Cfilter id='g' width='214.4%25' height='241.7%25' x='-57.2%25' y='-70.9%25' filterUnits='objectBoundingBox'%3E %3CfeOffset in='SourceAlpha' result='shadowOffsetOuter1'/%3E %3CfeGaussianBlur in='shadowOffsetOuter1' result='shadowBlurOuter1' stdDeviation='2.5'/%3E %3CfeColorMatrix in='shadowBlurOuter1' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.170509178 0'/%3E %3C/filter%3E %3C/defs%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' d='M38.294 23.046c-1.657 0-3.155-.35-4.494-1.05-1.339-.701-2.391-1.673-3.158-2.915-.766-1.243-1.149-2.648-1.149-4.214 0-1.567.383-2.971 1.15-4.214.766-1.243 1.818-2.214 3.157-2.915 1.34-.7 2.845-1.05 4.517-1.05 1.409 0 2.682.24 3.82.723a7.638 7.638 0 0 1 2.867 2.078l-2.415 2.17c-1.099-1.236-2.46-1.853-4.086-1.853-1.007 0-1.904.214-2.694.644a4.643 4.643 0 0 0-1.846 1.796c-.441.768-.662 1.642-.662 2.62 0 .98.22 1.854.662 2.622a4.643 4.643 0 0 0 1.846 1.796c.79.43 1.687.644 2.694.644 1.625 0 2.987-.625 4.086-1.875l2.415 2.169a7.513 7.513 0 0 1-2.879 2.1c-1.146.483-2.423.724-3.831.724zm19.814-3.66H50.56l-1.44 3.389h-3.854l7.245-15.816h3.715l7.268 15.816h-3.947l-1.44-3.39zm-1.184-2.78l-2.578-6.055-2.577 6.056h5.155zm23.25 6.169l-.023-9.49-4.783 7.818h-1.695l-4.76-7.614v9.286h-3.53V6.959h3.111l6.084 9.828L80.57 6.96h3.089l.046 15.816h-3.53zM94.787 6.959c1.44 0 2.69.233 3.75.7 1.06.467 1.877 1.13 2.45 1.989.573.858.86 1.875.86 3.05 0 1.16-.287 2.173-.86 3.039-.573.866-1.39 1.529-2.45 1.988-1.06.46-2.31.69-3.75.69h-3.274v4.36h-3.762V6.959h7.036zm-.209 8.473c1.13 0 1.99-.238 2.578-.712.588-.475.882-1.149.882-2.022 0-.889-.294-1.57-.882-2.045-.589-.474-1.448-.712-2.578-.712h-3.065v5.49h3.065zm16.053 1.13l-2.183 2.214v3.999h-3.739V6.959h3.739v7.388l7.198-7.388h4.18l-6.734 7.05 7.129 8.766h-4.389l-5.201-6.214zm17.167-9.603v15.816h-3.762V9.896h-3.25V6.96h7.012zm15.17 12.833v2.983h-12.284v-2.373l6.27-5.761c.665-.618 1.114-1.149 1.346-1.593.233-.444.349-.885.349-1.322 0-.632-.22-1.118-.662-1.457-.441-.339-1.087-.508-1.939-.508-.712 0-1.354.131-1.927.395a3.667 3.667 0 0 0-1.44 1.186l-2.74-1.717c.635-.919 1.51-1.638 2.624-2.158 1.115-.52 2.392-.78 3.831-.78 1.208 0 2.264.193 3.17.577.906.384 1.61.926 2.113 1.627.503.7.755 1.525.755 2.474 0 .858-.186 1.664-.558 2.417-.371.753-1.09 1.612-2.16 2.576l-3.738 3.434h6.99z'/%3E %3Cpath stroke='%23FFF' stroke-linejoin='round' stroke-width='.691' d='M4.03 14.953l6.558-10.584 6.556 10.584z'/%3E %3Cg transform='translate(4 4.248)'%3E %3Cuse fill='%23FFF' xlink:href='%23a'/%3E %3Cuse fill='%23000' filter='url(%23b)' xlink:href='%23a'/%3E %3C/g%3E %3Cpath stroke='%23FFF' stroke-linejoin='round' stroke-width='.691' d='M17.152 14.955l-6.564-10.58L23.7 4.368z'/%3E %3Cg transform='translate(4 4.248)'%3E %3Cuse fill='%23FFF' xlink:href='%23c'/%3E %3Cuse fill='%23000' filter='url(%23d)' xlink:href='%23c'/%3E %3C/g%3E %3Cpath stroke='%23FFF' stroke-linejoin='round' stroke-width='.691' d='M17.152 14.955l-6.564 10.58 13.114.008z'/%3E %3Cg transform='translate(4 4.248)'%3E %3Cuse fill='%23FFF' xlink:href='%23e'/%3E %3Cuse fill='%23000' filter='url(%23f)' xlink:href='%23e'/%3E %3C/g%3E %3Cpath stroke='%23FFF' stroke-linejoin='round' stroke-width='.691' d='M4.03 14.957l6.558 10.584 6.557-10.584z'/%3E %3Cg transform='translate(4 4.248)'%3E %3Cuse fill='%23000' filter='url(%23g)' xlink:href='%23h'/%3E %3Cuse fill='%23FFF' xlink:href='%23h'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E" alt="logo">
+    </div>
+    <h1>Teachable Machine Image Model</h1> 
+  <button type="button" onclick="init()" class="myButton">START</button>
+    <br><br>
+  <div id="webcam-container"></div>
+    
+  <div id="label-container"></div>
+   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <script type="text/javascript">
+      // More API functions here:
+      // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+  
+      // the link to your model provided by Teachable Machine export panel
+      const URL = "https://teachablemachine.withgoogle.com/models/_TMVmxEpu/";
+  
+      let model, webcam, labelContainer, maxPredictions;
+  
+      // Load the image model and setup the webcam
+      async function init() {
+          const modelURL = URL + "model.json";
+          const metadataURL = URL + "metadata.json";
+  
+          // load the model and metadata
+          // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+          // or files from your local hard drive
+          // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+          model = await tmImage.load(modelURL, metadataURL);
+          maxPredictions = model.getTotalClasses();
+  
+          // Convenience function to setup a webcam
+          const flip = true; // whether to flip the webcam
+          webcam = new tmImage.Webcam(480, 360, flip); // width, height, flip
+          await webcam.setup(); // request access to the webcam
+          await webcam.play();
+          window.requestAnimationFrame(loop);
+  
+          // append elements to the DOM
+          document.getElementById("webcam-container").appendChild(webcam.canvas);
+          labelContainer = document.getElementById("label-container");
+          for (let i = 0; i < maxPredictions; i++) { // and class labels
+              labelContainer.appendChild(document.createElement("div"));
+          }
+        document.getElementById("webcam-container").appendChild(webcam.canvas).style.borderRadius = "25px";
+        document.getElementById("webcam-container").appendChild(webcam.canvas).style.border = "thick solid rgb(255,255,255)"
+      }
+  
+      async function loop() {
+          webcam.update(); // update the webcam frame
+          await predict();
+          window.requestAnimationFrame(loop);
+      }
+
+  
+  </script>
+<script>
+  // run the webcam image through the image model
+ async function predict() {
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+    }
+</script>
+
+  <!-- <footer id="footer">
+    <div class="socialmedia">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+
+      <a href="#"><i class="fab fa-twitter"></i></a>
+
+      <a href="#"><i class="fab fa-instagram"></i></a>
+
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer> -->
+
+ 
+</body>
+</html>
